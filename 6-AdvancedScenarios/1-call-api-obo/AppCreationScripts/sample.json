@@ -7,6 +7,54 @@
         "RepositoryUrl": "ms-identity-javascript-react-tutorial",
         "Endpoint": "AAD v2.0"
     },
+    
+    "ReadmerHeader": { //HeaderChapterGenerator.t4
+        //for the moment entirely controlled from inside HeaderChapterGenerator.t4
+    },
+
+    "ReadmeScenario": { //ScenarioReadmeGenerator.t4
+        "MainText": "Scenario text in markdown format + scenario diagram\n\n",
+        "Image": "./ReadmeFiles/sign-in.png",
+        "AdditionalNotes": "\n Some additional notes, will be displayed right after image"
+    },
+
+    "ReadmePrerequirements": { //PreRequirementsChapterGenerator.t4
+        "FreeText": "if this text is empty, the default text will be used from PreRequirementsChapterGenerator.t4"
+    },
+
+    //When all of the fields are empty, only legacy setup will be used from LegacyHowToRunChapterGenerator.t4, else it will use SetupSampleChapterGenerator.t4
+    "ReadmeSetup": { //LegacyHowToRunChapterGenerator.t4 or SetupSampleChapterGenerator.t4
+        "FreeText": "\n For command line run the next commands: \n",
+        "CertificateOption": "set to 1 when a certificate may be used as a substitute of secret"
+    },
+
+    "ReadmeTroubleshooting": { //TroubleshootingChapterGenerator.t4
+        "FreeText": "\n If this field is empty, it will use the default part of TroubleshootingChapterGenerator.t4"
+    },
+
+    "ReadmeUsingTheSample": { //UseSampleChapterGenerator.t4
+        "FreeText": "This field must be filled, no default exists"
+    },
+
+    "ReadmeAboutTheCode": { //AboutTheCodeChapterGenerator.t4
+        "FreeText": "if this field is empty, then default from Legacy/LegacyAboutTheCodeChapterGenerator.t4 will be used"
+    },
+
+    "ReadmeAzureDeploy": { //AzureDeployChapterGenerator.t4
+        "FreeText": "This field must be filled with deployment steps, no default exists"
+    },
+
+    "ReadmeNextSteps": { //NextStepsChapterGenerator.t4
+        "FreeText": "If this field is empty, then default will be used from NextStepsChapterGenerator.t4"
+    },
+
+    "ReadmeContributing": { //ContributingChapterGenerator.t4
+        "FreeText": "If this field is empty, the default will be used from ContributingChapterGenerator.t4"
+    },
+
+    "ReadmeLearnMore": { //LearnMoreChapterGenerator.t4
+        "FreeText": "If this field is empty, then default will be taken from LearnMoreChapterGenerator.t4"
+    },
     "AADApps": [
         {
             "Id": "DownstreamAPI",
@@ -21,7 +69,11 @@
                 {
                     "Comment": "Create a new conditional access policy as described in the sample's README"
                 }
-            ]
+            ],
+             "Sample": { 
+                "SampleSubPath": "6-AdvancedScenarios\\1-call-api-obo",
+                "ProjectDirectory": "\\DownstreamAPI"
+            }
         },
         {
             "Id": "MiddletierAPI",
@@ -42,7 +94,11 @@
                 {
                     "Comment": "Navigate to the Manifest and set 'accessTokenAcceptedVersion' to '2' instead of 'null'"
                 }
-            ]
+            ],
+            "Sample": { 
+                "SampleSubPath": "6-AdvancedScenarios\\1-call-api-obo",
+                "ProjectDirectory": "\\MiddletierAPI"
+            }
         },
         {
             "Id": "spa",
@@ -63,7 +119,11 @@
                 {
                     "Comment": "Navigate to the Manifest page, find the 'replyUrlsWithType' section and change the type of redirect URI to 'Spa'"
                 }
-            ]
+            ],
+            "Sample": { 
+                "SampleSubPath": "6-AdvancedScenarios\\1-call-api-obo",
+                "ProjectDirectory": "\\SPA"
+            }
         }
     ],
     "CodeConfiguration": [
@@ -102,7 +162,7 @@
             ]
         },
         {
-            "App": "middletierAPI",
+            "App": "MiddletierAPI",
             "SettingKind": "Replace",
             "SettingFile": "\\..\\MiddletierAPI\\config.json",
             "Mappings": [
